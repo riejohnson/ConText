@@ -1,0 +1,172 @@
+************************************************************************                                           
+                               README
+                            ConText v4.00
+                              July 2017
+        C++ program for neural networks for text categorization
+************************************************************************
+0. Change log
+
+* July 2017: ConText v4.00 (corresponding to [JZ17])
+* May 2016: ConText v3.00 (corresponding to [JZ16])
+* December 2015: ConText v2.00a
+* September 2015: ConText v2.00 (corresponding to [JZ15b])
+* August 2015: ConText v1.01
+* July 2015: ConText v1.00 (corresponding to [JZ15a])
+* March 2015: beta 0.1 (corresponding to [JZ15a])
+* January 2015: beta 0.0 (corresponding to arXiv:1412.1058v1)
+
+Contents:
+---------
+1. Introduction
+1.1. Hardware Requirements
+1.2. Software Requirements
+2. Download and Installation
+2.1. Installation trouble shooting
+3. Documentation
+4. To Reproduce the Experiments in [JZ15a,JZ16b,JZ16,JZ17]
+5. Compatibility Considerations
+5.1. For users of old versions
+5.2. Endianness
+6. Data Source
+7. Contact
+8. Copyright
+9. References
+
+---------------
+1. Introduction
+This software package provides a C++ implementation of neural networks for 
+text categorization described in [JZ15a,JZ15b,JZ16,JZ17]. One main functional 
+difference of v4 from v3 is the addition of deep pyramid convolutional neural
+networks (DPCNN) of [JZ17]. 
+
+1.1  Hardware Requirements
+This software runs only on graphics processing unit (GPU).  That is, to use 
+this software, your system must have a GPU such as Tesla K20.  Testing was 
+done on Tesla M2070 and Quadro M6000. 
+
+1.2  Software Requirements
+The provided makefile uses gcc.  CUDA must be installed.  CUDA v7.5 or higher 
+is recommended.  Whether a version earlier than v5.0 works or not is unknown.  
+Testing was done with CUDA v7.5 and Linux.  In principle, the code should 
+compile and run also in other systems (e.g., Windows), provided that a GPU and 
+an appropriate version of CUDA are installed.  But no guarantee.  
+To optionally use the provided text preprocessing tools, Perl is required.  
+
+----------------------------
+2. Download and Installation
+* Download the package and extract the content.  
+* Customize "makefile" at the top directory if necessary. 
+  - Set CUDA_PATH to where CUDA is. 
+  - Include a line for the compute capability of your GPU if it is not already 
+    there. 
+  
+    The compute capability can be found by looking up Wikipedia: 
+    https://en.wikipedia.org/wiki/CUDA . 
+    It can be also found by entering "gpuDevice" in matlab.
+    
+* Build executables by entering "make" at the top directory.  
+
+To make sure the build was done correctly, go to examples/ and enter 
+
+    ./sample.sh
+
+In our system, we get "perf:err,0.1625" (which means error rate 16.25%) at the 
+end.  You might get a slightly different error rate depending on the system, 
+due to the difference in floating-point computation and so on.   
+
+2.1  Installation trouble shooting
+-------
+Symptom: "make" returns an error such as: 
+
+    nvcc fatal  : Unsupported gpu architecture 'compute_52' 
+
+Cause: Your version of CUDA is too old to support the designated compute 
+       capability.  
+Solution: Remove the line, e.g., "-gencode arch=compute_dd,code=sm_52", 
+          from your makefile. 
+-------
+Symptom: ./sample.sh returns an error such as 
+
+    !cuda error!: [snip] cudaGetErrorString returned invalid device function
+
+  or the error rate obtained by ./sample.sh is abnormally poor. 
+Cause: The compute capability of your GPU card is higher than the one included 
+       in makefile. 
+Solution: Add to the makefile "arch" and "code" that matches the compute 
+          capability of your GPU card.  For example, if it is "6.2", add 
+          "-gencode arch=compute_62,code=sm_62". 
+
+----------------
+3. Documentation
+See http://riejohnson.com/cnn_download.html#doc
+Please also read the comments in the scripts at examples/. 
+ 
+4. To Reproduce the Experiments in [JZ15a,JZ15b,JZ16,JZ17] 
+Shell scripts are provided at examples/ and at examples/other-sh/.  
+The user guide http://riejohnson.com/software/ConText-ug-v4.pdf has a list of 
+the scripts. 
+
+NOTE: To run the sample scripts at examples/ and examples/other-sh/, you need 
+      to set your current directory to examples/. 
+             
+------------------------------
+5. Compatiblity Considerations
+5.1  For users of old versions
+The executables "conText" and "reText" of v3 became obsolete.  Essentially, 
+they were merged into one new executable "reNet".  The interface of "reNet" 
+is similar to "reText" of v3 though some parameters now have different 
+names (e.g., "num_iterations" -> "num_epochs").  Other prominent changes 
+from v3 include some file format changes.  In particular, please note the 
+following. 
+
+- Layer files saved by "conText" cannot be used with v4. 
+- Model files saved by "conText" cannot be used with v4. 
+- Model files saved by "reText" of v3 can be used with v4 if the models do
+  not have any "Lay" layer (which is a "conText"-format layer). 
+- The region files generated by earlier versions cannot be used with v4. 
+- "write_featuers" of "conText" is no longer supported.  Other functions of 
+  old versions all have equivalences in v4. 
+  
+5.2  Endianness
+Non-text files generated by this code (e.g., model files and feature files) 
+are Endian sensitive and cannot be shared by the systems with different 
+"Endianness".
+  
+--------------  
+6. Data Source 
+- The IMDB dataset [MDPHN11] is originally from:
+    http://ai.stanford.edu/~amaas/data/sentiment/.   
+- Small toy data used in the scripts at examples/ were extracted from the IMDB 
+  dataset.  
+- The Elec dataset was derived from part of the Amazon review dataset [ML13]
+  at http://snap.stanford.edu/data/web-Amazon.html. 
+
+----------
+7. Contact 
+riejohnson@gmail.com
+
+------------
+8. Copyright
+This software is distributed under the GNU public license. Please read the file
+COPYING.
+
+-------------
+9. References
+[JZ15a] Effective use of word order for text categorization with convolutional 
+        neural networks.  Rie Johnson and Tong Zhang.  NAACL HLT 2015. 
+
+[JZ15b] Semi-supervised convolutional neural networks for text categorization 
+        via region embedding.  Rie Johnson and Tong Zhang.  NIPS 2015.
+
+[JZ16] Supervised and semi-supervised text categorization using LSTM for region 
+       embeddings.  Rie Johnson and Tong Zhang.  ICML 2016.
+
+[JZ17] Deep pyramid convolutional neural networks for text categorization.  
+       Rie Johnson and Tong Zhang.  ACL 2017. 
+
+[MDPHN11] Learning word vectors for sentiment analysis.  Andrew L. Maas, 
+          Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and 
+          Christopher Potts.  ACL 2011. 
+
+[ML13] Hidden factors and hidden topics: understanding rating dimensions with 
+       review text.  Julian McAuley and Jure Leskovec.  RecSys 2013.  
