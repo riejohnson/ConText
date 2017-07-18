@@ -16,7 +16,8 @@ ConText v4.00 is available at http://riejohnson.com/cnn_download.html.
 **_Getting Started_**
 1. Download the code and extract the files, and read [`README`](README) (not `README.md`).  
 2. Go to the top directory and build executables by entering `make`, after customizing `makefile` as needed.  
-  (If you downloaded from GitHub, `make` also decompresses sample text files that exceed GitHub file size limit.) 
+  (If you downloaded from GitHub, `make` also decompresses sample text files that exceed GitHub file size limit 
+   and does `chmod +x` on shell scripts.)
 3. To confirm installation, go to `examples/` and enter `./sample.sh`.  
   (See [`README`](README) for installation trouble shooting.) 
 4. Read Section 1 (Overview) of [User Guide](http://riejohnson.com/software/conText-v4-ug.pdf) to get an idea. 
