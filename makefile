@@ -25,7 +25,7 @@ BIN_NAME1 = reNet
 BIN_DIR = bin
 TARGET1 = $(BIN_DIR)/$(BIN_NAME1)
 
-CUDA_PATH       = /usr/local/cuda
+CUDA_PATH       = /usr/local/cuda  # <= Change this 
 #CUDA_PATH = /opt/sw/packages/cuda/7.5
 CUDA_INC_PATH   = $(CUDA_PATH)/include
 CUDA_BIN_PATH   = $(CUDA_PATH)/bin
