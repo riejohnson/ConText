@@ -1,5 +1,3 @@
-## Uncer construction ... Coming soon ...
-
 ## ConText v4.00: C++ program for neural networks for text categorization
 ConText v4.00 provides a C++ implementation of neural networks for text categorization described in:    
 * [JZ15a] [Effective use of word order for text categorization with convolutional neural networks](https://aclweb.org/anthology/N/N15/N15-1011.pdf).   Rie Johnson and Tong Zhang.  NAACL HLT 2015.    
