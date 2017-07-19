@@ -17,7 +17,8 @@
 ####    source code, it decompresses sample text files by "tar -xvf" and makes
 ####    shell script files executable by "chmod +x".  These additional actions
 ####    are for going around GitHub restrictions.  If they cause any trouble, 
-####    please try the archive at riejohnson.com/cnn_download.html#download.  
+####    please try the archive at riejohnson.com/cnn_download.html#download
+####    instead of GitHub.  
 ####--------------------------------------------------------------------------
 
 BIN_NAME1 = reNet
