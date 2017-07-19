@@ -9,7 +9,7 @@ ConText v4.00 provides a C++ implementation of neural networks for text categori
 
 ConText v4.00 is available at http://riejohnson.com/cnn_download.html. 
 
-**_System Requirements_**: This software runs only on a CUDA-capable GPU such as Tesla K20.  That is, your system **must have a GPU** and an appropriate version of CUDA installed.  See [`README`](README) for more details and other requirements. 
+**_System Requirements_**: This software runs only on a CUDA-capable GPU such as Tesla K20.  That is, your system **must have a GPU** and an appropriate version of CUDA installed.  `makefile` and example shell scripts are for Unix-like systems.  Testing was done on Linux.  In principle, the C++ code should compile and run also in other systems (e.g., Windows), but no guarantee.  See [`README`](README) for more details. 
 
 **_Download & Documentation_**: See http://riejohnson.com/cnn_download.html#download.  
 
@@ -17,7 +17,7 @@ ConText v4.00 is available at http://riejohnson.com/cnn_download.html.
 1. Download the code and extract the files, and read [`README`](README) (not `README.md`).  
 2. Go to the top directory and build executables by entering `make`, after customizing `makefile` as needed.  
   (If you downloaded from GitHub, `make` also decompresses sample text files that exceed GitHub file size limit 
-   and does `chmod +x` on shell scripts.)
+   and does `chmod +x` on shell scripts.) 
 3. To confirm installation, go to `examples/` and enter `./sample.sh`.  
   (See [`README`](README) for installation trouble shooting.) 
 4. Read Section 1 (Overview) of [User Guide](http://riejohnson.com/software/conText-v4-ug.pdf) to get an idea. 
