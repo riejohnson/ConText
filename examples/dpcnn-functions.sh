@@ -30,7 +30,7 @@ dpcnn_training () {
 
   #---  Optional parameters.  Copy to local variables and set default values if missing. 
   # do_save
-  local _tmp=$tmp;     if [ "$_tmb"   = "" ]; then _tmb=500;   fi
+  local _tmb=$tmb;     if [ "$_tmb"   = "" ]; then _tmb=500;   fi
   local _epo=$epochs;  if [ "$_epo"   = "" ]; then _epo=150;   fi
   local _lam=$lam;     if [ "$_lam"   = "" ]; then _lam=1e-4;  fi
   local _tlam=$toplam; if [ "$_tlam"  = "" ]; then _tlam=1e-4; fi
