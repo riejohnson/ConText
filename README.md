@@ -19,7 +19,7 @@ ConText v4.00 is available at http://riejohnson.com/cnn_download.html.
 3. To confirm installation, go to `examples/` and enter `./sample.sh`.  
   (See [`README`](README) for installation trouble shooting.) 
 4. Read Section 1 (Overview) of [User Guide](http://riejohnson.com/software/conText-v4-ug.pdf) to get an idea. 
-5. Try some shell scripts at `examples/`.  There is a table of the scripts in Section 1.5 of 
+5. Try some shell scripts at `examples/`.  There is a table of the scripts in Section 1.6 of 
 [User Guide](http://riejohnson.com/software/conText-v4-ug.pdf). 
 
 **_Data Source_**: The data files were derived from [Large Move Review Dataset (IMDB)](http://ai.stanford.edu/~amaas/data/sentiment/) 
