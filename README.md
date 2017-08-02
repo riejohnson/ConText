@@ -1,9 +1,9 @@
 ## ConText v4.00: C++ program for neural networks for text categorization
 ConText v4.00 provides a C++ implementation of neural networks for text categorization described in:    
-* [JZ15a] [Effective use of word order for text categorization with convolutional neural networks](https://aclweb.org/anthology/N/N15/N15-1011.pdf).   Rie Johnson and Tong Zhang.  NAACL HLT 2015.    
-* [JZ15b] [Semi-supervised convolutional neural networks for text categorization via region embedding](https://papers.nips.cc/paper/5849-semi-supervised-convolutional-neural-networks-for-text-categorization-via-region-embedding).  Rie Johnson and Tong Zhang.  NIPS 2015.  
-* [JZ16] [Supervised and semi-supervised text categorization using LSTM for region embeddings](http://proceedings.mlr.press/v48/johnson16.pdf).  Rie Johnson and Tong Zhang.  ICML 2016.   
-* [JZ17] [Deep pyramid convolutional neural networks for text categorization](http://riejohnson.com/paper/dpcnn-acl17.pdf).  Rie Johnson and Tong Zhang.  ACL 2017.   
+* [Deep pyramid convolutional neural networks for text categorization](http://aclweb.org/anthology/P/P17/P17-1052.pdf).  Rie Johnson and Tong Zhang.  ACL 2017.
+* [Effective use of word order for text categorization with convolutional neural networks](https://aclweb.org/anthology/N/N15/N15-1011.pdf).   Rie Johnson and Tong Zhang.  NAACL HLT 2015.    
+* [Semi-supervised convolutional neural networks for text categorization via region embedding](https://papers.nips.cc/paper/5849-semi-supervised-convolutional-neural-networks-for-text-categorization-via-region-embedding).  Rie Johnson and Tong Zhang.  NIPS 2015.  
+* [Supervised and semi-supervised text categorization using LSTM for region embeddings](http://proceedings.mlr.press/v48/johnson16.pdf).  Rie Johnson and Tong Zhang.  ICML 2016.   
 
 ConText v4.00 is available at http://riejohnson.com/cnn_download.html. 
 
