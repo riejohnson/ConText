@@ -31,4 +31,4 @@ ConText v4.00 is available at http://riejohnson.com/cnn_download.html.
 [MDPHN11] Andrew L. Maas, Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts.  Learning word vectors for sentiment analysis.  ACL 2011.   
 [ML13] Julian McAuley and Jure Leskovec.  Hidden factors and hidden topics: understanding rating dimensions with review text.  RecSys 2013.   
 
-**_Pull requests_**: This GitHub repository provides a snapshot of research code, which is constantly changing elsewhere for research purposes.  For this reason, it is very likely that pull requests will be declined. 
+**_Note_**: This GitHub repository provides a snapshot of research code, which is constantly changing elsewhere for research purposes.  For this reason, it is very likely that pull requests will be declined. 
